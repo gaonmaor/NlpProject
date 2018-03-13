@@ -1,0 +1,393 @@
+
+%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+ 
+\documentclass[paper=a4, fontsize=12pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[square,sort]{natbib}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{hebfont} %enables Hebrew fonts related commands
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{algorithm}
+\usepackage{algpseudocode}% for algs
+\usepackage{afterpage}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{verbatim}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+   %\newpage
+    }
+\usepackage{lipsum,eso-pic} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\newcommand\AtPageUpperRight[1]{\AtPageUpperLeft{%
+   \makebox[\paperwidth][r]{#1}}}
+%\usepackage{background}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{wrapfig}
+\usepackage{times}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{bm}
+\newcommand{\pred}[1]{\boldsymbol{{1}}[#1]}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{todonotes}
+\usepackage{hyperref}
+%\newcommand{\C}{{\cal C}}
+\renewcommand{\H}{{\cal H}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\BP}{{\cal A}}
+\newcommand{\SP}{{\cal V}}
+\newcommand{\bp}{A} % ``big'' partition
+\renewcommand{\sp}{V} % ``small'' partition
+\newcommand{\teta}{\tilde\eta}
+\newcommand{\tr}{\tilde r}
+\newcommand{\X}{{\cal X}}
+\newcommand{\Y}{{\cal Y}}
+%\newcommand{\G}{{\cal G}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\hkl}{\widehat{KL}}
+\newcommand{\TV}[1]{\nrm{#1}_{\textrm{{\tiny \textup{TV}}}}}
+\newcommand{\nrm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\beq}{\begin{eqnarray*}}
+	\newcommand{\eeq}{\end{eqnarray*}}
+\newcommand{\beqn}{\begin{eqnarray}}
+\newcommand{\eeqn}{\end{eqnarray}}
+\newcommand{\tp}{\otimes}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\hide}[1]{}
+\newcommand{\eps}{\varepsilon}
+%\newcommand{\beq}{\begin{eqnarray*}}
+%\newcommand{\eeq}{\end{eqnarray*}}
+\newcommand{\oo}[1]{\frac{1}{#1}}
+\newcommand{\inv}{^{-1}} %inverse
+\newcommand{\ball}{\mathsf{ball}}	
+\newcommand{\hp}{\hat{\pi}}
+\newcommand{\deviation}{\mathrm{Deviation}}
+\newcommand{\todoi}[1]{\todo[inline]{#1}}
+\newcommand{\todosivan}[1]{\todo[color=yellow]{sivan: #1}}
+\newcommand{\todoeyal}[1]{\todo[color=green]{eyal: #1}}
+\newcommand{\todosr}[1]{\todo[color=red]{sivan/aryeh: #1}}
+\newcommand{\todoaryeh}[1]{\todo[color=cyan]{aryeh: #1}}
+\newcommand{\btrain}{\bar{B}}
+
+\newcommand{\marg}{\operatorname{marg}}
+\newcommand{\dist}{\rho} %
+\newcommand{\g}{\gamma}
+\newcommand{\ddim}{\operatorname{ddim}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\gn}{\, | \,}
+\newcommand{\bepf}{\begin{proof}}
+\newcommand{\enpf}{\end{proof}}
+
+\newcommand{\tS}{S'}
+\newcommand{\tx}{\tilde x}
+\newcommand{\ty}{\tilde y}
+\newcommand{\tX}{\tilde X}
+\newcommand{\tbX}{\tilde{\bm X}}
+\newcommand{\tY}{\tilde Y}
+\newcommand{\tbY}{\tilde {\bm Y}}
+\newcommand{\tz}{\tilde z}
+\newcommand{\cnt}{\textrm{count}}
+\newcommand{\nn}{\text{nn}}
+\newcommand{\inn}{\in\mathbb{R}^}
+\newcommand{\ha}{\hat\alpha}
+\renewcommand{\k}{m}
+\newcommand{\hk}{\hat m}
+\newcommand{\hY}{\hat{Y}}
+\newcommand{\hX}{\hat{X}}
+\newcommand{\hbX}{\hat{\bm X}}
+\newcommand{\hbY}{\hat{\bm Y}}
+\newcommand{\hi}{\hat{\bm i}}
+\renewcommand{\a}{\alpha}
+%\newcommand{\gnet}{\Gamma}
+%\newcommand{\gnet}{\tilde{\bm X}}
+\newcommand{\gnet}{{\bm X}}
+\newcommand{\gset}{\Lambda}
+\newcommand{\Ng}{\mathcal{N}_\g}
+\newcommand{\UB}{\textrm{UB}}
+\newcommand{\missmass}{L}
+\newcommand{\Sexact}{\tS_n^*(\bm X)}
+\newcommand{\Vor}{\mathcal{V}}
+\newcommand{\imag}{\text{Image}}
+\newcommand{\knn}{_{k\mydash\textrm{{\tiny \textup{NN}}}}}
+\newcommand{\mydash}{\text{-}}
+
+%%%packages:
+\usepackage{times,amsmath,amsfonts,stmaryrd,amsthm,amssymb,enumitem,todonotes}
+\usepackage{algorithm,booktabs}
+
+%\renewcommand{\algorithmicrequire}{\textbf{input}}
+%\renewcommand{\algorithmicensure}{\textbf{output}}
+
+
+\usepackage{pifont}
+%\usepackage[round]{natbib}
+\usepackage{verbatim}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{fit}
+\usetikzlibrary{matrix} 
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathreplacing}
+
+
+
+%%% Environments and references:
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{con}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{example}[theorem]{Example}
+\renewcommand{\eqref}[1]{Eq.~(\ref{eq:#1})}
+\newcommand{\figref}[1]{Figure \ref{fig:#1}}
+\newcommand{\tabref}[1]{Table \ref{tab:#1}}        
+\newcommand{\secref}[1]{Section \ref{sec:#1}}
+\newcommand{\thmref}[1]{Theorem \ref{thm:#1}}
+\newcommand{\lemref}[1]{Lemma \ref{lem:#1}}
+\newcommand{\conref}[1]{Conjecture \ref{con:#1}}
+\newcommand{\corref}[1]{Cor.~\ref{cor:#1}}
+\newcommand{\appref}[1]{Appendix \ref{ap:#1}}
+\newcommand{\propref}[1]{Proposition \ref{prop:#1}}
+\newcommand{\algoref}[1]{Alg.~\ref{alg:#1}}
+\newcommand{\factref}[1]{Fact \ref{fact:#1}}
+\newcommand{\foldlogl}{\mathrm{FoldedLL}}
+
+%%% Common definitions
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\loss}{\ell}
+\newcommand{\binlab}{\{\pm 1\}}
+
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\half}{{\frac12}}
+\newcommand{\ceil}[1]{{\lceil #1\rceil}}
+\newcommand{\floor}[1]{\lfloor #1\rfloor}
+
+\newcommand{\sign}{\textrm{sign}}
+\newcommand{\one}{\mathbb{I}}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\dotprod}[1]{\langle #1 \rangle}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\grad}{\triangledown}
+
+
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\reg}{Regression}
+
+
+\newcommand{\err}{\mathrm{err}}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\st}{\text{ s.t. }}
+
+
+
+%%%% vectors and matrices
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\vw}{\vec{w}}
+\newcommand{\vb}{\vec{b}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\va}{\vec{a}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vz}{\vec{z}}
+\newcommand{\vX}{\vec{X}}
+\newcommand{\mt}[1]{\mathbb{#1}}
+%transpose
+\renewcommand\t{\ensuremath{{\scriptscriptstyle{\top}}}}
+\newcommand{\trn}{^{\mathsf{T}}} %operator transpose
+
+\newcommand{\svd}{\operatorname{SVD}}
+\newcommand{\clip}{\operatorname{clip}}
+\newcommand{\logl}{\mathrm{LL}}
+\newcommand{\kl}{\mathrm{KL}}
+\newcommand{\train}{^\mathrm{train}}
+\newcommand{\test}{^\mathrm{test}}
+\newcommand{\opt}{^\mathrm{opt}}
+\newcommand{\fold}{_\mathrm{fold}}
+\newcommand{\spn}{_\mathrm{sp}}
+\newcommand{\tno}{_\mathrm{tr}}
+\newcommand{\ber}{_\mathrm{Ber}}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+
+
+\newcommand{\pt}{\pi_t}
+\newcommand{\pnull}{{\bar\pi}}
+\newcommand{\phat}{{\hat\pi}}
+\newcommand{\mse}{\mathrm{MSE}}
+
+
+%%% for beamer
+\newenvironment{spaceitemize}[1][]{\begin{itemize}[#1]\addtolength{\itemsep}{3pt}}{\end{itemize}}
+
+
+%%% Caligraphics
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+
+%%% A central bibliography
+\newcommand{\mysharedbib}{\string~/Dropbox/Research/useful/shared}
+
+
+\title{NLP Project}
+
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+
+
+\author{Eyal Gutflaish , Maor Gaon, meni Sadi   }
+
+\date{\normalsize\today} % Today's date or a custom date
+%Classifying processes by their system call traces using compressed one nearest neighbor
+\begin{document}
+
+\maketitle % Print the title
+
+
+ 
+\section{Architecture}
+\begin{itemize}
+ 
+ \item Let a question $q=[q_1,\ldots,q_n]$, a paragraph $p=[p_1,\ldots,p_m], m>>n$.
+ \item Pad the paragraph
+ Note we will have to choose a maximum length of a question and a paragraph, while adding a mask to the paragraph, i.e.
+ we will have $[w_1,\ldots,w_m,bin]$ for each paragraph while the extra words will be 0. 
+ 
+ Let $m$ be the maximal length of a paragraph.
+ 
+ Let $Q(x)\in R^m$ be a 1-hot vector where $P[x]=1$
+	\item  Run a GRU over the question -- $h_q=GRU(q)$.
+	\item  Run a GRU over the context paragraph -- $h_p=GRU(p,initialState=h_q)$
+	\item $start=\argmax_i Softmax(W_1h_p+b_1),b_1\in R^{m}$
+	\item $end=\argmax_i Softmax(W_2h_p+b_2),b_2\in R^{m}$
+	\item Optimize according to (only on  training):
+	\begin{align}
+	&L_1=CrossEntropy(Q(start),Softmax(W_1h_p+b_1))\\
+	&L_2=CrossEntropy(Q(end),Softmax(W_1h_p+b_1))\\
+	&Loss=L_1+L_2
+	\end{align}
+	\item return $P[start,end]$
+	
+	\end{itemize}
+
+
+\section{Stuff Michael mentioned he  wants}
+\begin{itemize}
+		\item Move the TF code to keras.
+		\item Add soft attention -- if so you can visualize the confusion matrix and see what words from the paragraph were helpful in predicting.
+\item What memory does the RNN really have - we can know that be seeing what neurons ``light up''. E.G. far neurons would get a very gradients, hence would not be updated  -- see ``Vanishing gradient problem''.
+Visualizations should be a good idea.
+
+See \href{https://www.youtube.com/watch?v=6wcs6szJWMY&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=12&t=3s}{Visualizing neurons} for a nice video about this
+\item Show contusion matrix of attention after adding attention (if adding attention)
+\item Notice the data set is pretty large so in order to run it fully you would need a server from Michael with a GPU. But I guess we can experiment with a small portion of the data set
+
+  
+ \item Maor - Do your regular code optimization stuff.
+ Feel free to change class/variable names.
+ \item Work in small batches (see the config.py for the model's parameters) -- If toy want to run the all dateset ask Michael for a server
+  \item If You decide to improve the basic model please do an alternate model class. Do not use the qa\_model class. Just inherit@override or copy paste. It took me a pretty lone time to make this base line work properly. Call it model\_x or something like that.
+\end{itemize}
+ 
+\section{Run the model}
+\begin{itemize}
+	
+	\item Use config.py for changing the parameters of the model
+	\item go to the MAIN notebook for running the model. Or just run it from  any IDE -- ``python train''
+	\item To change the model it'self change qa\_model.py
+	\item Notice your credits in the assignment -- every one should do it's relative share. E.g. I have 2 points credit, Maor has 4 points credit and meni has x points credit.
+	I have spent at least a weak (9h a day) in this, so Maor it means you should put 2 weeks :) and mani x*3.5 weeks.
+	\item Enjoy
+\end{itemize}
+
+\end{document}
